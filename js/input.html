@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Form Pemesanan </title>
+  <link rel="stylesheet" href="input.css" />
+</head>
+<body>
+  <div class="form-wrapper">
+    <h2>Form Pemesanan </h2>
+    <form id="orderForm">
+      <div class="field">
+        <label for="name">Nama Lengkap</label>
+        <input type="text" id="name" required />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+      </div>
+      <div class="field">
+        <label for="phone">Telepon</label>
+        <input type="tel" id="phone" required />
+      </div>
+      <div class="field">
+        <label for="qty">Jumlah orang</label>
+        <input type="number" id="qty" min="1" value="1" required />
+      </div>
+      <div class="field">
+        <label for="departure">Tanggal Keberangkatan</label>
+        <input type="date" id="departure" required />
+      </div>
+      <button type="submit" class="btn-submit">Kirim Pesanan</button>
+    </form>
+
+    <div class="next-slide">
+      <a href="orders.html" class="btn-slide">Lihat Daftar Pemesanan →</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const order = {
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        qty: document.getElementById("qty").value,
+        paket: "Main Futsal",
+        tanggal_pesan: new Date().toLocaleDateString("id-ID"),
+        tanggal_berangkat: document.getElementById("departure").value
+      };
+
+      const orders = JSON.parse(localStorage.getItem("orders")) || [];
+      orders.push(order);
+      localStorage.setItem("orders", JSON.stringify(orders));
+
+      alert("Pesanan berhasil dikirim!");
+      window.location.href = "orders.html";
+    });
+  </script>
+</body>
+</html>

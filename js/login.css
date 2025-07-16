@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('kereta.webp') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 360px;
+  padding: 1rem;
+}
+
+.login-card {
+  background: rgba(0, 0, 0, 0.5); /* Lebih gelap agar kontras dgn bg */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #eee;
+}
+
+.field input {
+  width: 100%;
+  padding: 0.6rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #ffcb05;
+  box-shadow: 0 0 6px #ffcb05;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 0.75rem;
+  background: #ffcb05;
+  border: none;
+  border-radius: 25px;
+  color: #0a2540;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-login:hover {
+  background: #ffe45e;
+  transform: translateY(-2px);
+}
+
+.login-card p {
+  text-align: center;
+  margin-top: 1.2rem;
+  color: #ddd;
+}
+
+.login-card a {
+  color: #ffcb05;
+  text-decoration: none;
+}
+
+.login-card a:hover {
+  text-decoration: underline;
+}

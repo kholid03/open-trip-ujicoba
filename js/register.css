@@ -1,0 +1,105 @@
+/* Background foto untuk seluruh halaman */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('bali.jpg'); /* Ganti dengan nama file fotomu */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container tengah */
+.register-container {
+  background: rgba(255, 255, 255, 0.85); /* Semi-transparan */
+  padding: 40px;
+  width: 360px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  position: relative;
+}
+
+/* Membuat bagian tengah lebih melengkung (top dan bottom saja) */
+.register-card {
+  background-color: white;
+  padding: 30px;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Judul */
+.register-card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Form field */
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+.field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.field input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Tombol daftar */
+.btn-register {
+  width: 100%;
+  background-color: #2980b9;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-register:hover {
+  background-color: #1c6ea4;
+}
+
+/* Link login */
+.register-card p {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.register-card a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.register-card a:hover {
+  text-decoration: underline;
+}

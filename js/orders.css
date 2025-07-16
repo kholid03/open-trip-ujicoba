@@ -1,0 +1,131 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Background gambar PNG dan overlay */
+body {
+  background: url('kereta.webp') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+/* Overlay gelap agar konten tetap jelas */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+/* Container utama */
+.orders-container {
+  max-width: 1000px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  color: #333;
+}
+
+/* Judul */
+.orders-container h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Tabel responsif */
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Tabel */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+  min-width: 700px;
+}
+
+thead {
+  background-color: #007bff;
+  color: #fff;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* Tombol Hapus Semua */
+.btn-clear {
+  display: block;
+  margin: 0 auto;
+  padding: 12px 20px;
+  background: #dc3545;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-clear:hover {
+  background: #bd2130;
+}
+
+/* Responsif Mobile */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    background: #fdfdfd;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #555;
+  }
+
+  .btn-clear {
+    width: 100%;
+  }
+}

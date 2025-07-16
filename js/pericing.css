@@ -1,0 +1,86 @@
+/* Background Gambar Halaman */
+body {
+  background: url('kapal-pelni.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 90px;
+  margin: 0;
+  color: #fff;
+}
+
+/* Overlay agar isi bisa dibaca */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.55); /* gelapkan latar belakang */
+  z-index: -1;
+}
+
+/* Judul Bagian */
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Kartu Paket Liburan */
+.paket-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.paket-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.paket-card img {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.paket-card .card-body {
+  padding: 20px;
+  color: #333;
+}
+
+.paket-card .card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.paket-card .card-text {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+/* Tombol PILIH */
+.paket-card .btn {
+  width: 100%;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.paket-card .btn-success:hover {
+  background-color: #218838;
+  transform: scale(1.02);
+}

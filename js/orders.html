@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daftar Pesanan – </title>
+
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="orders.css" />
+</head>
+<body>
+  <main class="orders-container">
+    <h1><i class="fa-solid fa-list-check"></i> DAFTAR BOKINGAN</h1>
+
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Telepon</th>
+            <th>Paket</th>
+            <th>Jumlah Jam</th>
+            <th>Tanggal Pesan</th>
+            <th>Tanggal Keberangkatan</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="orderList">
+          <!-- Data akan diisi oleh JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <button id="clearAll" class="btn-clear">
+      <i class="fa-solid fa-trash"></i> Hapus Semua Pesanan
+    </button>
+
+    <div class="next-slide">
+      <a href="input.html" class="btn-slide">← Tambah Pemesanan Baru</a>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const orderList = document.getElementById("orderList");
+      const clearAllBtn = document.getElementById("clearAll");
+      const orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+      if (orders.length === 0) {
+        orderList.innerHTML = '<tr><td colspan="9" style="text-align:center;">Belum ada pesanan.</td></tr>';
+        return;
+      }
+
+      orders.forEach((order, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${order.name}</td>
+          <td>${order.email}</td>
+          <td>${order.phone}</td>
+          <td>${order.paket}</td>
+          <td>${order.qty} Jam</td>
+          <td>${order.tanggal_pesan}</td>
+          <td>${order.tanggal_berangkat}</td>
+          <td>
+            <button class="btn-hapus" onclick="hapusPesanan(${index})">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </td>
+        `; 
+        orderList.appendChild(row);
+      });
+
+      clearAllBtn.addEventListener("click", () => {
+        if (confirm("Hapus semua pesanan?")) {
+          localStorage.removeItem("orders");
+          location.reload();
+        }
+      });
+    });
+
+    function hapusPesanan(index) {
+      let orders = JSON.parse(localStorage.getItem("orders")) || [];
+      orders.splice(index, 1);
+      localStorage.setItem("orders", JSON.stringify(orders));
+      location.reload();
+    }
+  </script>
+</body>
+</html>

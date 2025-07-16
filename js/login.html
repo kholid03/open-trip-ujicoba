@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login – KHO Travel</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+
+
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <h2>Login KHO Travel</h2>
+      <form onsubmit="return handleLogin(event)">
+        <div class="field">
+          <label for="username">Username</label>
+          <input type="text" id="username" required placeholder="Masukkan Username">
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" required placeholder="Masukkan Password">
+        </div>
+        <button type="submit" class="btn-login">Masuk</button>
+      </form>
+      <p>Belum punya akun? <a href="REGISTER.html">Daftar sekarang</a></p>
+    </div>
+  </div>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      // Bisa tambahkan validasi username/password di sini jika diperlukan
+      window.location.href = "pericing.html"; // redirect ke halaman paket liburan
+      return false;
+    }
+  </script>
+</body>
+</html>
